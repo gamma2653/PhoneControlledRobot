@@ -75,55 +75,55 @@ void loop() {
   // Handle servo motor sliders
   int indexOfEnd = dataIn.indexOf(END_OF_MSG);
   while (indexOfEnd != -1) {
-    Serial.print("Data had end of line character: ");
-    Serial.println(dataIn);
+//    Serial.print("Data had end of line character: ");
+//    Serial.println(dataIn);
     String servoType = dataIn.substring(0, 2);
     String datum = dataIn.substring(2, indexOfEnd);
-    Serial.print("Possible servo datum: ");
-    Serial.println(datum);
+//    Serial.print("Possible servo datum: ");
+//    Serial.println(datum);
 
 
     if (dataIn.startsWith("s1")) {
       // Move Servo 1
       servo1Pos = datum.toInt();  // Convert the string into integer
-      Serial.print("Moving servo 1 to: ");
-      Serial.println(servo1Pos);
+//      Serial.print("Moving servo 1 to: ");
+//      Serial.println(servo1Pos);
       moveServo(servo01, servo1PPos, servo1Pos, 20);
       // Remove command from buffer
       dataIn = dataIn.substring(indexOfEnd + 1, dataIn.length());
     } else if (dataIn.startsWith("s2")) {
       // Move Servo 2
       servo2Pos = datum.toInt();
-      Serial.print("Moving servo 2 to: ");
-      Serial.println(servo2Pos);
+//      Serial.print("Moving servo 2 to: ");
+//      Serial.println(servo2Pos);
       moveServo(servo02, servo2PPos, servo2Pos, 20);
       dataIn = dataIn.substring(indexOfEnd + 1, dataIn.length());
     } else if (dataIn.startsWith("s3")) {
       // Move Servo 3
       servo3Pos = datum.toInt();
-      Serial.print("Moving servo 3 to: ");
-      Serial.println(servo3Pos);
+//      Serial.print("Moving servo 3 to: ");
+//      Serial.println(servo3Pos);
       moveServo(servo03, servo3PPos, servo3Pos, 20);
       dataIn = dataIn.substring(indexOfEnd + 1, dataIn.length());
     } else if (dataIn.startsWith("s4")) {
       // Move Servo 4
       servo4Pos = datum.toInt();
-      Serial.print("Moving servo 4 to: ");
-      Serial.println(servo4Pos);
+//      Serial.print("Moving servo 4 to: ");
+//      Serial.println(servo4Pos);
       moveServo(servo04, servo4PPos, servo4Pos, 20);
       dataIn = dataIn.substring(indexOfEnd + 1, dataIn.length());
     } else if (dataIn.startsWith("s5")) {
       // Move Servo 5
       servo5Pos = datum.toInt();
-      Serial.print("Moving servo 5 to: ");
-      Serial.println(servo5Pos);
+//      Serial.print("Moving servo 5 to: ");
+//      Serial.println(servo5Pos);
       moveServo(servo05, servo5PPos, servo5Pos, 20);
       dataIn = dataIn.substring(indexOfEnd + 1, dataIn.length());
     } else if (dataIn.startsWith("s6")) {
       // Move Servo 6
       servo6Pos = datum.toInt();
-      Serial.print("Moving servo 6 to: ");
-      Serial.println(servo6Pos);
+//      Serial.print("Moving servo 6 to: ");
+//      Serial.println(servo6Pos);
       moveServo(servo06, servo6PPos, servo6Pos, 20);
       dataIn = dataIn.substring(indexOfEnd + 1, dataIn.length());
       
